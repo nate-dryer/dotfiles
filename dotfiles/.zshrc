@@ -42,72 +42,27 @@ export FUNCNEST=100
 # PATH: Adds custom directories to your executable search path
 export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH"
 
-# --- Aliases ---
-# Aliases provide shortcuts for commonly used commands or sequences
-alias suggest='yes "" | gh copilot suggest'  # Shortcut for GitHub Copilot suggestions
-alias explain='yes "" | gh copilot explain'  # Shortcut for GitHub Copilot explanations
-alias ll="ls -la"
-alias gs="git status"
-alias gp="git pull"
-alias gc="git commit -m"
-alias cddev="cd $DEV_DIR"
-alias brewup="brew update && brew upgrade"
-alias editzsh="$EDITOR ~/.zshrc"
-alias python="python3"
-alias pip="pip3"
+# Source aliases from aliases.zsh
+if [ -f "$HOME/development/dotfiles/aliases.zsh" ]; then
+    source "$HOME/development/dotfiles/aliases.zsh"
+fi
 
-# --- Custom Functions ---
-# Functions allow you to define reusable commands with specific logic
+# Source custom functions
+if [ -f "$HOME/development/dotfiles/functions/activate_venv.sh" ]; then
+    source "$HOME/development/dotfiles/functions/activate_venv.sh"
+fi
 
-# activate_venv: Activates a Python virtual environment located at the given path
-activate_venv() {
-    if [ -z "$1" ]; then
-        echo "Usage: activate_venv <path_to_virtual_env>"
-        return 1
-    fi
+if [ -f "$HOME/development/dotfiles/functions/load_env.sh" ]; then
+    source "$HOME/development/dotfiles/functions/load_env.sh"
+fi
 
-    VENV_PATH="$1"
-    if [ ! -d "$VENV_PATH" ]; then
-        echo "Virtual environment not found at $VENV_PATH"
-        return 1
-    fi
+if [ -f "$HOME/development/dotfiles/functions/activate_pyenv.sh" ]; then
+    source "$HOME/development/dotfiles/functions/activate_pyenv.sh"
+fi
 
-    source "$VENV_PATH/bin/activate"
-    echo "Activated virtual environment at $VENV_PATH"
-}
-
-# virtualenv: A quick alias to call activate_venv function
-alias virtualenv='activate_venv'
-
-# --- Open Interpreter Configuration ---
-# oi: A function to create and manage an Open Interpreter virtual environment
-oi() {
-    OIDIR="$HOME/development/oienv"
-    if [ ! -d "$OIDIR" ]; then
-        echo "Creating Open Interpreter virtual environment..."
-        python3 -m venv "$OIDIR"
-    fi
-    source "$OIDIR/bin/activate"
-    if ! command -v interpreter &> /dev/null; then
-        echo "Installing Open Interpreter..."
-        pip install open-interpreter
-    fi
-
-    echo "Select hosting option:"
-    echo "1. OpenAI (default)"
-    read "option?Enter option number: "
-
-    case "$option" in
-        1)
-            interpreter --model "gpt-4o" --api_key "$OPENAI_API_KEY"
-            ;;
-        *)
-            echo "Invalid option selected."
-            ;;
-    esac
-
-    deactivate
-}
+if [ -f "$HOME/development/dotfiles/functions/oi.sh" ]; then
+    source "$HOME/development/dotfiles/functions/oi.sh"
+fi
 
 # --- Zsh-Specific Settings ---
 # Zsh auto-completion setup to enhance command-line productivity
