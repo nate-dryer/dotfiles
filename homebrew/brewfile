@@ -1,0 +1,61 @@
+# Taps
+tap "homebrew/core"
+
+# Install Homebrew packages
+brew "berkeley-db@5"  # Berkeley DB, a high-performance embedded database
+brew "binutils"       # GNU binary utilities
+brew "ca-certificates" # Common CA certificates
+brew "expat"          # XML parser library written in C
+brew "gcc"            # GNU Compiler Collection
+brew "gdbm"           # GNU database manager
+brew "glibc"          # GNU C Library
+brew "gmp"            # GNU multiple precision arithmetic library
+brew "gnutls"         # GNU Transport Layer Security library
+brew "icu4c"          # International Components for Unicode
+brew "isl"            # Integer Set Library for the polyhedral model
+brew "krb5"           # Kerberos network authentication protocol
+brew "libedit"        # Command line editor library
+brew "libevent"       # Event notification library
+brew "libffi"         # Foreign Function Interface library
+brew "libgcrypt"      # Cryptographic library based on the code from GnuPG
+brew "libgpg-error"   # Common error values for all GnuPG components
+brew "libidn2"        # Internationalized domain names (IDN) library
+brew "libmpc"         # Library for the arithmetic of complex numbers
+brew "libnghttp2"     # HTTP/2 C Library
+brew "libnsl"         # Public client interface library for NIS(YP) and NIS+
+brew "libprelude"     # Security Information and Event Management (SIEM) library
+brew "libtasn1"       # ASN.1 structure parser library
+brew "libtirpc"       # Transport Independent RPC library
+brew "libtool"        # Generic library support script
+brew "libunistring"   # Unicode string library
+brew "libxcrypt"      # Extended crypt library for password hashing
+brew "libxml2"        # GNOME XML library
+brew "libxslt"        # XSLT C library for GNOME
+brew "linux-headers@5.15" # Linux kernel headers for 5.15
+brew "linux-pam"      # Pluggable Authentication Modules for Linux
+brew "lz4"            # Fast LZ compression algorithm
+brew "m4"             # Macro processing language
+brew "mpfr"           # Multiple precision floating-point library
+brew "ncurses"        # Terminal handling library
+brew "nettle"         # Low-level cryptographic library
+brew "openldap"       # Open source implementation of the Lightweight Directory Access Protocol
+brew "openssl@3"      # Cryptography and SSL/TLS Toolkit
+brew "p11-kit"        # Library for loading and enumerating PKCS#11 modules
+brew "perl"           # Highly capable, feature-rich programming language
+brew "postgresql@14"  # Powerful, open-source object-relational database system
+brew "readline"       # Library for command-line editing
+brew "redis"          # In-memory data structure store, used as a database, cache, and message broker
+brew "sqlite"         # Command-line interface for SQLite
+brew "unbound"        # Validating, recursive, caching DNS resolver
+brew "util-linux"     # Miscellaneous system utilities for Linux
+brew "wget"           # Network utility to retrieve files from the web
+brew "git"            # Distributed version control system
+brew "node"           # JavaScript runtime built on Chrome's V8 JavaScript engine
+brew "python"         # Interpreted, high-level, general-purpose programming language
+brew "xz"             # General-purpose data compression software
+brew "zlib"           # Compression library implementing the deflate compression method
+brew "zstd"           # Fast real-time compression algorithm
+
+# Install Homebrew services
+brew "postgresql"     # Powerful, open-source object-relational database system
+brew "redis"          # In-memory data structure store, used as a database, cache, and message broker

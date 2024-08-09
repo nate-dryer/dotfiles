@@ -1,16 +1,28 @@
-version: '3'
+version: '3.8'
+
 services:
-  web:
-    build: .
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "8000:80"
+      - "8000:8000"
+    env_file:
+      - .env
     volumes:
-      - .:/usr/src/app
-    environment:
-      - APP_ENV=development
+      - .:/app:cached  # Optimize for macOS performance
+    command: ["python", "app.py"]
+
   db:
-    image: postgres
+    image: postgres:13
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydatabase
+      POSTGRES_DB: nates_db
+      POSTGRES_USER: nate_user
+      POSTGRES_PASSWORD: secure_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

@@ -1,20 +1,27 @@
+# Dockerfile for Nate Dryer's Python Project
+
 # Use an official Python runtime as a parent image
-FROM python:3.10
+FROM python:3.10-slim
 
-# Set the working directory
-WORKDIR /usr/src/app
+# Set environment variables for Python
+ENV PYTHONUNBUFFERED=1
 
-# Copy the requirements file into the container
-COPY requirements.txt ./
+# Install system dependencies and clean up
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install any necessary dependencies
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install Python dependencies from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the current directory contents into the container
-COPY . .
+# Expose port 8000 for the application
+EXPOSE 8000
 
-# Make port 80 available to the world outside this container
-EXPOSE 80
-
-# Run app.py when the container launches
-CMD ["python", "./app.py"]
+# Run the application
+CMD ["python", "app.py"]
