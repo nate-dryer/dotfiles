@@ -9,6 +9,7 @@ services:
       - "8000:8000"
     env_file:
       - .env
+      - .env.docker
     volumes:
       - .:/app:cached  # Optimize for macOS performance
     command: ["python", "app.py"]
@@ -16,9 +17,9 @@ services:
   db:
     image: postgres:13
     environment:
-      POSTGRES_DB: nates_db
-      POSTGRES_USER: nate_user
-      POSTGRES_PASSWORD: secure_password
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
     volumes:

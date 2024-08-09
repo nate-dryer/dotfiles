@@ -1,0 +1,26 @@
+# Changes
+
+## .gitignore
+- Added common patterns for ignoring build artifacts, logs, and OS-generated files.
+- Added patterns for ignoring `.env` files.
+
+## docker/docker-compose.yml
+- Replaced hardcoded PostgreSQL credentials with environment variables.
+- Updated the `env_file` section to include a new `.env.docker` file.
+
+## dotfiles/.env
+- Replaced sensitive information with placeholders.
+- Added instructions to use a secure vault for secrets.
+
+## dotfiles/.zshrc
+- Consolidated environment variables and aliases from `dotfiles/.zshrc_dev` and `dotfiles/.zshrc_personal`.
+- Removed duplicate environment variables and aliases.
+- Added a section to load environment variables from `.env_dev` and `.env_personal` if they exist.
+
+## homebrew/brewfile
+- Reviewed and included only relevant packages.
+
+## script/install.sh
+- Fixed the symlink to point to the correct `~/.zshrc` file.
+- Updated the path to `~/development/dotfiles/.zshrc`.
+- Listed all changes and included explanation for each change step by step.
