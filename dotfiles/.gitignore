@@ -1,0 +1,22 @@
+brewfile.lock.json
+
+# Ignore build artifacts
+*.o
+*.a
+*.so
+*.dll
+*.exe
+*.out
+*.class
+*.jar
+
+# Ignore logs
+*.log
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore .env files
+.env
+.env.*

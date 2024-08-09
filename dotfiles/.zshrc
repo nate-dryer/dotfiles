@@ -1,4 +1,3 @@
-
 # ~/.zshrc - Nate Dryer's Zsh Configuration
 
 # --- Load environment variables from .env file ---
@@ -7,6 +6,15 @@
 # Ensure that your .env file is secure and includes variables in the format: KEY='value'
 if [ -f $HOME/.env ]; then
     export $(cat $HOME/.env | xargs)
+fi
+
+# Load environment variables from .env_dev and .env_personal if they exist
+if [ -f "$HOME/.env_dev" ]; then
+    export $(cat $HOME/.env_dev | xargs)
+fi
+
+if [ -f "$HOME/.env_personal" ]; then
+    export $(cat $HOME/.env_personal | xargs)
 fi
 
 # --- Environment Variables ---
@@ -38,6 +46,15 @@ export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH"
 # Aliases provide shortcuts for commonly used commands or sequences
 alias suggest='yes "" | gh copilot suggest'  # Shortcut for GitHub Copilot suggestions
 alias explain='yes "" | gh copilot explain'  # Shortcut for GitHub Copilot explanations
+alias ll="ls -la"
+alias gs="git status"
+alias gp="git pull"
+alias gc="git commit -m"
+alias cddev="cd $DEV_DIR"
+alias brewup="brew update && brew upgrade"
+alias editzsh="$EDITOR ~/.zshrc"
+alias python="python3"
+alias pip="pip3"
 
 # --- Custom Functions ---
 # Functions allow you to define reusable commands with specific logic
