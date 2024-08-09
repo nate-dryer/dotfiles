@@ -8,6 +8,10 @@ if [ -f $HOME/.env ]; then
     export $(cat $HOME/.env | xargs)
 fi
 
+if [ -f "$HOME/.personal_info" ]; then
+    export $(cat $HOME/.personal_info | xargs)
+fi
+
 # Load environment variables from .env_dev and .env_personal if they exist
 if [ -f "$HOME/.env_dev" ]; then
     export $(cat $HOME/.env_dev | xargs)

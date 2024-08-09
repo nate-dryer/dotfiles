@@ -1,6 +1,6 @@
 [user]
-    name = Nate Dryer
-    email = nate.dryer@example.com
+    name = $NAME
+    email = $EMAIL
 
 [alias]
     co = checkout

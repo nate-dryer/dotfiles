@@ -5,6 +5,10 @@ if [ -f "$HOME/.env_personal" ]; then
     export $(cat $HOME/.env_personal | xargs)
 fi
 
+if [ -f "$HOME/.personal_info" ]; then
+    export $(cat $HOME/.personal_info | xargs)
+fi
+
 # --- Environment Variables ---
 export EDITOR="nano"
 export DEV_DIR="$HOME/projects"

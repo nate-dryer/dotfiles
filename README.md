@@ -10,6 +10,7 @@ This repository contains all the configuration files for setting up my developme
 - `.zshrc`: Zsh configuration file with sections for loading environment variables, setting environment variables, configuring the path, defining aliases, and custom functions.
 - `.zshrc_dev`: Development-specific Zsh configuration file with additional environment variables, path configurations, and functions.
 - `.zshrc_personal`: Personal-specific Zsh configuration file with additional environment variables, path configurations, and functions.
+- `.personal_info`: Contains personal information like name, email, GitHub URL, phone number, personal website, remote login, and local hostname.
 
 ### docker
 - `docker-compose.yml`: Configuration file for Docker Compose, defining services for the application and database, including environment variables and volumes.
