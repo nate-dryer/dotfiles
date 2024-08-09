@@ -1,0 +1,16 @@
+[user]
+    name = Nate Dryer
+    email = nate.dryer@example.com
+
+[alias]
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+
+[core]
+    editor = code --wait
+    excludesfile = ~/.gitignore_global
+
+[push]
+    default = simple
