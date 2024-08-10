@@ -3,6 +3,10 @@
 
 # Symlink dotfiles
 ln -sf ~/development/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/development/dotfiles/.personal_info ~/.personal_info
+ln -sf ~/development/dotfiles/.env ~/.env
+ln -sf ~/development/dotfiles/aliases.zsh ~/.aliases.zsh
+ln -sf ~/development/dotfiles/functions ~/.functions
 
 # Install Homebrew packages
 brew bundle --file=~/development/dotfiles/homebrew/Brewfile
@@ -12,6 +16,11 @@ bash ~/development/dotfiles/macos/macos_setup.sh
 
 # Install Python dependencies
 pip install -r ~/development/dotfiles/requirements.txt
+
+# Execute GitHub action
+if [ -f ~/development/dotfiles/.github/workflows/zshrc_setup.yml ]; then
+    bash ~/development/dotfiles/.github/workflows/zshrc_setup.yml
+fi
 
 echo "Development environment setup complete!"
 
