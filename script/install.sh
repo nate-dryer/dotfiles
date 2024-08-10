@@ -3,6 +3,10 @@
 
 # Symlink dotfiles
 ln -sf ~/development/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/development/dotfiles/.personal_info ~/.personal_info
+ln -sf ~/development/dotfiles/.env ~/.env
+ln -sf ~/development/dotfiles/aliases.zsh ~/.aliases.zsh
+ln -sf ~/development/dotfiles/functions ~/.functions
 
 # Install Homebrew packages
 brew bundle --file=~/development/dotfiles/homebrew/Brewfile
