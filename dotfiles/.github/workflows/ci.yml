@@ -1,0 +1,28 @@
+name: CI Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x' # Modify as needed for other languages
+
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          # Add commands to install other dependencies as needed
+
+      - name: Run tests
+        run: |
+          if [ -f pytest.ini ] || [ -f tox.ini ] || [ -d tests ]; then pytest; fi
+          # Add commands to run other test frameworks as needed
+
+      # Add more steps as needed for different languages and frameworks

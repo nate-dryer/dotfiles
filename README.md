@@ -37,3 +37,17 @@ This repository contains all the configuration files for setting up my developme
 
 ### LICENSE.md
 - `LICENSE.md`: Contains the MIT License for the project.
+
+### GitHub Actions Workflow
+- `ci.yml`: A GitHub Actions workflow file located in the `.github/workflows/` directory. This workflow sets up a CI environment, installs dependencies, and runs tests. It includes steps to set up Python using `actions/setup-python@v2`, install dependencies from `requirements.txt`, and run tests using `pytest`. The workflow is designed to be easily customizable for different languages and frameworks.
+
+## Customizing the GitHub Actions Workflow
+
+To customize the GitHub Actions workflow, you can modify the `ci.yml` file located in the `.github/workflows/` directory. Here are some common customizations:
+
+- **Change Python Version**: Modify the `python-version` field in the `Set up Python` step to specify a different version of Python.
+- **Add Dependencies**: Add commands to the `Install dependencies` step to install additional dependencies required by your project.
+- **Run Different Tests**: Add or modify commands in the `Run tests` step to run tests using different frameworks or tools.
+- **Add More Steps**: Add additional steps to the workflow to handle other languages, frameworks, or tasks specific to your project.
+
+For more information on GitHub Actions and YAML syntax, refer to the [GitHub Actions documentation](https://docs.github.com/en/actions).
